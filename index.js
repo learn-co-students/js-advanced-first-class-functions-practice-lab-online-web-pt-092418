@@ -23,11 +23,23 @@ function driversByRevenue(drivers) {
 function driversByName(drivers) {
   const newarray = [...drivers];
   return newarray.sort(function (a, b) {
-    return a.anme > b.name
+    return a.name > b.name
   });
   return newarray
 }
 
-function totalRevenue() {
+function totalRevenue(drivers) {
+  
+  let newArray = drivers.map(function (el) {
+    return el.revenue
+  })
+  
+  return newArray.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+}
+
+function averageRevenue(drivers) {
+  return totalRevenue(drivers)/ drivers.length
   
 }
