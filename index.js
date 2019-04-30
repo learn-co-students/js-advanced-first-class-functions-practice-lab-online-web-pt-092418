@@ -22,6 +22,12 @@ function driversByRevenue(drivers) {
 
 function driversByName(drivers) {
   const newarray = [...drivers];
- return  newarray.sort();
+  return newarray.sort(function (a, b) {
+    return a.anme > b.name
+  });
+  return newarray
+}
+
+function totalRevenue() {
   
 }
